@@ -1,0 +1,70 @@
+body{
+    background-color: rgb(85, 8, 8);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: 0;
+}
+
+/* 3x3 XOX board */
+.gameBoard{
+    height: 300px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    margin-left:auto ;
+    margin-right: auto;
+    font-size: 75px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color:white;
+}
+.container{
+    text-align: center;
+    margin: 0 auto;  
+    max-width: 450px;
+    width: 100%;
+}
+.header{
+    text-align: center;
+    letter-spacing: 3px;
+    font-size:50px;
+    color: white; 
+}
+
+html, body{
+    height: 100%;
+}
+
+/* XOX each gameCell border */
+.gameBoard .gameCell{
+    border: 3px solid grey;
+    text-align: center;
+    height: 94px;
+    width: 94px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* outer border clear */
+.gameCell:nth-child(1),
+.gameCell:nth-child(2),
+.gameCell:nth-child(3){
+    border-top: none;
+}
+.gameCell:nth-child(3n+1){
+    border-left: none;
+}
+.gameCell:nth-child(3n){
+    border-right: none;
+}
+.gameCell:nth-child(7),
+.gameCell:nth-child(8),
+.gameCell:nth-child(9){
+    border-bottom: none;
+}
+
+/* coloring winner player and winner cells */
+.gameCell.showWinnerCells{
+    background-color: rgb(184, 7, 7);
+}
